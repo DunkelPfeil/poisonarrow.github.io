@@ -1,114 +1,423 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Poison Arrow | Cybersecurity Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poison Arrow | Cybersecurity Portfolio</title>
+  <meta name="description" content="Poison Arrow — certifications, labs, projects, and curated cybersecurity research." />
 
-    <style>
-        body {
-            margin: 0;
-            background-color: #0b0f19;
-            color: #e2e8f0;
-            font-family: Arial, sans-serif;
-        }
+  <style>
+    :root{
+      --bg: #07060d;
+      --panel: rgba(18, 12, 30, 0.72);
+      --panel2: rgba(10, 9, 18, 0.65);
+      --text: #e8e7ff;
+      --muted: #a7a4c7;
 
-        header {
-            padding: 60px 20px;
-            text-align: center;
-            background: #111827;
-        }
+      --purple: #8b5cf6;   /* violet */
+      --purple2:#22c55e;   /* green */
+      --green: #22c55e;
 
-        header h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
+      --border: rgba(139,92,246,.22);
+      --border2: rgba(34,197,94,.22);
 
-        header p {
-            font-size: 18px;
-            color: #94a3b8;
-        }
+      --shadow: 0 16px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --maxw: 1050px;
+    }
 
-        nav {
-            text-align: center;
-            padding: 20px;
-            background: #0f172a;
-        }
+    *{ box-sizing: border-box; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(139,92,246,.25), transparent 60%),
+        radial-gradient(1000px 600px at 85% 25%, rgba(34,197,94,.18), transparent 55%),
+        radial-gradient(900px 600px at 60% 90%, rgba(139,92,246,.12), transparent 60%),
+        var(--bg);
+      line-height: 1.5;
+    }
 
-        nav a {
-            color: #38bdf8;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    a{ color: inherit; text-decoration: none; }
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 26px 18px 60px; }
 
-        section {
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+    /* Top bar */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255,255,255,.06);
+      background: rgba(10, 9, 18, .55);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 14px;
+      z-index: 10;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 800; letter-spacing:.6px;
+    }
+    .logo{
+      width: 34px; height: 34px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(139,92,246,.9), rgba(34,197,94,.85));
+      box-shadow: 0 10px 30px rgba(139,92,246,.22);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .nav{
+      display:flex; flex-wrap:wrap; gap: 10px;
+    }
+    .nav a{
+      font-size: 14px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+    }
+    .nav a:hover{
+      color: var(--text);
+      border-color: rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
 
-        .card {
-            background: #1e293b;
-            padding: 25px;
-            margin: 15px;
-            border-radius: 10px;
-        }
+    /* Hero */
+    .hero{ padding: 44px 6px 22px; }
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+    .dot{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(34,197,94,.12);
+    }
+    h1{
+      margin: 16px 0 10px;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.08;
+      letter-spacing: -0.6px;
+    }
+    .grad{
+      background: linear-gradient(90deg, rgba(139,92,246,1), rgba(34,197,94,1));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .sub{
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 16px;
+      margin: 0 0 18px;
+    }
+    .cta{
+      display:flex; flex-wrap:wrap; gap: 10px; margin-top: 16px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+    .btn:hover{ background: rgba(255,255,255,.06); }
+    .btn.primary{
+      border-color: rgba(34,197,94,.35);
+      background: linear-gradient(135deg, rgba(34,197,94,.18), rgba(139,92,246,.12));
+      box-shadow: 0 16px 45px rgba(34,197,94,.12);
+    }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #111827;
-            font-size: 14px;
-            color: #64748b;
-        }
-    </style>
+    /* Sections */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .card{
+      grid-column: span 12;
+      padding: 18px 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.07);
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(700px 220px at 20% 0%, rgba(139,92,246,.18), transparent 60%),
+                  radial-gradient(700px 220px at 80% 0%, rgba(34,197,94,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .card > *{ position: relative; }
+
+    .section-title{
+      display:flex; align-items:baseline; justify-content:space-between; gap: 10px;
+      margin: 0 0 8px;
+    }
+    .section-title h2{ margin:0; font-size: 18px; letter-spacing: .2px; }
+    .section-title a{ color: var(--muted); font-size: 13px; }
+    .section-title a:hover{ color: var(--text); }
+
+    .pillrow{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 10px; }
+    .pill{
+      font-size: 12px;
+      color: rgba(232,231,255,.92);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(10, 9, 18, .45);
+      padding: 7px 10px;
+      border-radius: 999px;
+    }
+
+    .list{ display:grid; gap: 10px; margin-top: 10px; }
+    .item{
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(10, 9, 18, .45);
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      align-items:flex-start;
+    }
+    .item strong{ display:block; margin-bottom: 2px; }
+    .item .meta{ color: var(--muted); font-size: 13px; }
+    .tag{
+      font-size: 12px;
+      color: rgba(34,197,94,.95);
+      border: 1px solid rgba(34,197,94,.25);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(34,197,94,.07);
+      white-space: nowrap;
+      height: fit-content;
+    }
+
+    .twoCol{ grid-column: span 12; }
+    @media (min-width: 900px){
+      .twoCol{ grid-column: span 6; }
+      .card.span8{ grid-column: span 8; }
+      .card.span4{ grid-column: span 4; }
+    }
+
+    footer{
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align:center;
+      padding: 18px 10px;
+    }
+    .small{ font-size: 12px; color: var(--muted); }
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
 
-<header>
-    <h1>Poison Arrow</h1>
-    <p>Cybersecurity Portfolio | Labs | Certifications | Research</p>
-</header>
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>POISON ARROW</div>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#labs">Labs</a>
+        <a href="#articles">Articles</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#certifications">Certifications</a>
-    <a href="#projects">Projects</a>
-    <a href="#articles">Articles</a>
-</nav>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span> Cybersecurity portfolio • living record</div>
+      <h1>Dark signal. <span class="grad">Sharp edge.</span></h1>
+      <p class="sub">
+        A centralized place to track certifications, hands-on labs, scripts/tools, and the security articles and research I’m actively following.
+      </p>
 
-<section id="about">
-    <h2>About</h2>
-    <div class="card">
-        <p>This site documents my professional development in cybersecurity, including certifications earned, labs completed, tooling developed, and research I find valuable.</p>
-    </div>
-</section>
+      <div class="cta">
+        <!-- Replace # with your real links -->
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn" href="#articles">Read notes</a>
+        <a class="btn" href="https://github.com/dunkelpfeil" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/cameronpfeil" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
 
-<section id="certifications">
-    <h2>Certifications</h2>
-    <div class="card">
-        <p>Security+ | Blue Team Level 1 | (Add more here)</p>
-    </div>
-</section>
+      <div class="pillrow" style="margin-top:18px;">
+        <span class="pill">Recon & tooling</span>
+        <span class="pill">Detection engineering</span>
+        <span class="pill">Network analysis</span>
+        <span class="pill">Authorized labs only</span>
+      </div>
+    </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-        <p>Netcat Scan Automation – Bash wrapper for automated scanning and banner grabbing.</p>
-    </div>
-</section>
+    <main class="grid">
 
-<section id="articles">
-    <h2>Articles & Research</h2>
-    <div class="card">
-        <p>Coming soon: curated industry research and analysis.</p>
-    </div>
-</section>
+      <!-- Featured Projects -->
+      <section class="card twoCol" id="projects">
+        <div class="section-title">
+          <h2>Featured projects</h2>
+          <a href="#" title="Optional projects page">All projects →</a>
+        </div>
 
-<footer>
-    © 2026 Poison Arrow. All rights reserved.
-</footer>
+        <div class="list">
+          <div class="item">
+            <div>
+              <strong>Netcat scan automation</strong>
+              <div class="meta">Bash wrapper for scanning + clean output formatting.</div>
+            </div>
+            <a class="tag" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
 
+          <div class="item">
+            <div>
+              <strong>Splunk detection notes</strong>
+              <div class="meta">SPL patterns, field extractions, and detection logic experiments.</div>
+            </div>
+            <span class="tag">In progress</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Packet analysis toolkit</strong>
+              <div class="meta">Wireshark filters, tcpdump patterns, and quick triage workflow.</div>
+            </div>
+            <span class="tag">Planned</span>
+          </div>
+        </div>
+
+        <p class="small" style="margin-top:12px;">Tip: link each project to its own repo for a cleaner portfolio.</p>
+      </section>
+
+      <!-- Certifications -->
+      <section class="card twoCol" id="certs">
+        <div class="section-title">
+          <h2>Certifications</h2>
+          <a href="#" title="Optional certifications page">Full list →</a>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div>
+              <strong>Security+ (example)</strong>
+              <div class="meta">Baseline security fundamentals • risk • controls.</div>
+            </div>
+            <span class="tag">Earned</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Blue Team Level 1 (example)</strong>
+              <div class="meta">Defensive skills • log analysis • detection workflow.</div>
+            </div>
+            <span class="tag">Earned</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Next cert (placeholder)</strong>
+              <div class="meta">What you’re studying next + expected date.</div>
+            </div>
+            <span class="tag">Studying</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Labs -->
+      <section class="card span8" id="labs">
+        <div class="section-title">
+          <h2>Labs</h2>
+          <a href="#" title="Optional labs page">Writeups →</a>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div>
+              <strong>TryHackMe / HTB lab writeups</strong>
+              <div class="meta">Sanitized notes, key takeaways, commands, and defensive lessons.</div>
+            </div>
+            <span class="tag">Ongoing</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Detection lab</strong>
+              <div class="meta">Attack simulation → logs → queries → tuning → false positive notes.</div>
+            </div>
+            <span class="tag">In progress</span>
+          </div>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          Keep it clean: only authorized environments, no sensitive details, no real targets.
+        </p>
+      </section>
+
+      <!-- Articles -->
+      <section class="card span4" id="articles">
+        <div class="section-title">
+          <h2>Articles</h2>
+          <a href="#" title="Optional articles page">All notes →</a>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div>
+              <strong>Curated reading list</strong>
+              <div class="meta">Add a short summary + why it matters.</div>
+            </div>
+            <span class="tag">Start here</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>RSS later (optional)</strong>
+              <div class="meta">We can automate this later with a generator.</div>
+            </div>
+            <span class="tag">Phase 2</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="card" id="contact">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <span class="small">Keep it simple</span>
+        </div>
+        <div class="pillrow">
+          <a class="btn" href="mailto:contact@poisonarrow.io">Email</a>
+          <a class="btn" href="https://github.com/dunkelpfeil" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/cameronpfeil" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Resume (PDF)</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="y"></span> Poison Arrow • Built on GitHub Pages
+      <div class="small" style="margin-top:6px;">Authorized labs and educational content only.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
