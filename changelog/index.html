@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog | Poison Arrow</title>
+  <meta name="description" content="Poison Arrow site changelog and build notes." />
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+
+        <div class="brand-name">
+          POISON ARROW
+          <span class="shot"></span>
+          <span class="shot-trail"></span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/articles/">Articles</a>
+        <a href="/changelog/">Changelog</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span> Site version notes • build log</div>
+      <h1>Changelog <span class="grad">/ Version Control</span></h1>
+      <p class="sub">
+        Notes on updates, fixes, and improvements as the Poison Arrow portfolio evolves.
+        This page tracks what changed, why it changed, and what’s next.
+      </p>
+    </section>
+
+    <main class="grid">
+
+      <!-- Latest -->
+      <section class="card" id="latest">
+        <div class="section-title">
+          <h2>Latest updates</h2>
+          <span class="small">Newest first</span>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div>
+              <strong>2026-02-27 — External stylesheet + header animation</strong>
+              <div class="meta">
+                Moved CSS from <code>index.html</code> into <code>/assets/styles.css</code>. Fixed header markup issues and added animated “arrow shot” hover effect on brand name.
+              </div>
+
+              <div class="pillrow" style="margin-top:10px;">
+                <span class="pill">UI</span>
+                <span class="pill">CSS</span>
+                <span class="pill">Bugfix</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          Tip: keep entries short and consistent—date, change, reason, next.
+        </p>
+      </section>
+
+      <!-- Template -->
+      <section class="card twoCol">
+        <div class="section-title">
+          <h2>Entry template</h2>
+          <span class="small">Copy/paste</span>
+        </div>
+
+        <div class="item">
+          <div>
+            <strong>YYYY-MM-DD — Title of change</strong>
+            <div class="meta">
+              What changed (1–2 sentences). Why it matters. Link to page/repo if relevant.
+              <br><br>
+              <em>Next:</em> What you plan to do next.
+            </div>
+
+            <div class="pillrow" style="margin-top:10px;">
+              <span class="pill">UI</span>
+              <span class="pill">Content</span>
+              <span class="pill">Infra</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roadmap -->
+      <section class="card twoCol">
+        <div class="section-title">
+          <h2>Roadmap</h2>
+          <span class="small">What’s next</span>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div>
+              <strong>Build subpages</strong>
+              <div class="meta">Projects, Certifications, Labs, Articles as dedicated pages with shared nav.</div>
+            </div>
+            <span class="tag">Planned</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Add “Now” section</strong>
+              <div class="meta">What you’re currently learning, building, or reading.</div>
+            </div>
+            <span class="tag">Planned</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="y"></span> Poison Arrow • Built on GitHub Pages
+      <div class="small" style="margin-top:6px;">Authorized labs and educational content only.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
