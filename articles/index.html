@@ -1,11 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Articles | Poison Arrow</title>
-  <meta charset="UTF-8">
+  <meta name="description" content="Curated cybersecurity articles, research notes, and podcasts followed by Poison Arrow." />
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body style="background-color:#0b0f19;color:white;font-family:Arial;">
-  <h1>Articles</h1>
-  <p>Coming soon...</p>
+
+<body>
+  <div class="wrap">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+
+        <div class="brand-name">
+          POISON ARROW
+          <span class="shot"></span>
+          <span class="shot-trail"></span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/certifications/">Certifications</a>
+        <a href="/labs/">Labs</a>
+        <a href="/articles/">Articles</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span> Curated research • notes & takeaways</div>
+      <h1>Articles <span class="grad">+ Notes</span></h1>
+      <p class="sub">
+        A place for the things I’m reading right now—threat reports, blogs, papers, and “why this matters” notes.
+        Entries are short, practical, and written for recall later.
+      </p>
+
+      <div class="cta">
+        <a class="btn primary" href="#reading">Reading list</a>
+        <a class="btn" href="#top-podcasts">Top podcasts</a>
+        <a class="btn" href="https://darknetdiaries.com/" target="_blank" rel="noreferrer">Darknet Diaries site</a>
+      </div>
+    </section>
+
+    <main class="grid">
+
+      <!-- Reading List -->
+      <section class="card span8" id="reading">
+        <div class="section-title">
+          <h2>Reading list</h2>
+          <span class="small">Add items as you go</span>
+        </div>
+
+        <div class="list">
+          <!-- Copy/paste this item block for each new article -->
+          <div class="item">
+            <div>
+              <strong>Template: Article title</strong>
+              <div class="meta">
+                Source: <em>Publisher / Blog</em> • Date: <em>YYYY-MM-DD</em><br>
+                Notes: 1–3 sentences on what happened + why it matters + what you’d look for in logs.
+              </div>
+
+              <div class="pillrow" style="margin-top:10px;">
+                <span class="pill">Threat Intel</span>
+                <span class="pill">Detection</span>
+                <span class="pill">IR</span>
+              </div>
+            </div>
+
+            <!-- Replace with the real link -->
+            <a class="tag" href="#" target="_blank" rel="noreferrer">Link</a>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Template: Vendor report / advisory</strong>
+              <div class="meta">
+                Notes: what’s exploited, what’s the impact, what mitigations work, and what telemetry to monitor.
+              </div>
+              <div class="pillrow" style="margin-top:10px;">
+                <span class="pill">Vuln</span>
+                <span class="pill">Mitigation</span>
+                <span class="pill">Telemetry</span>
+              </div>
+            </div>
+            <a class="tag" href="#" target="_blank" rel="noreferrer">Link</a>
+          </div>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          Tip: keep each entry consistent: title → source/date → 2–3 lines of takeaways → tags.
+        </p>
+      </section>
+
+      <!-- Quick Tags / Organization -->
+      <section class="card span4">
+        <div class="section-title">
+          <h2>Topics</h2>
+          <span class="small">How I label notes</span>
+        </div>
+
+        <div class="pillrow">
+          <span class="pill">Threat Intel</span>
+          <span class="pill">Malware</span>
+          <span class="pill">Phishing</span>
+          <span class="pill">Cloud</span>
+          <span class="pill">Windows</span>
+          <span class="pill">Linux</span>
+          <span class="pill">SIEM</span>
+          <span class="pill">Detection</span>
+          <span class="pill">IR</span>
+          <span class="pill">Forensics</span>
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          Later we can add filtering/search, but this keeps it fast and simple for now.
+        </p>
+      </section>
+
+      <!-- Top Podcasts -->
+      <section class="card" id="top-podcasts">
+        <div class="section-title">
+          <h2>Top podcasts</h2>
+          <span class="small">Spotify embeds (latest episodes show first)</span>
+        </div>
+
+        <div class="grid" style="margin-top:0;">
+          <!-- Darknet Diaries -->
+          <section class="card span8" style="margin-top:0;">
+            <div class="section-title">
+              <h2 style="font-size:16px;margin:0;">Darknet Diaries</h2>
+              <a href="https://open.spotify.com/show/4XPl3uEEL9hvqMkoZrzbx5" target="_blank" rel="noreferrer">Open on Spotify →</a>
+            </div>
+
+            <!-- Spotify show embed: will display the latest episodes automatically -->
+            <iframe
+              style="border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(10, 9, 18, .45);"
+              src="https://open.spotify.com/embed/show/4XPl3uEEL9hvqMkoZrzbx5?utm_source=generator&theme=0"
+              width="100%"
+              height="232"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Darknet Diaries on Spotify"
+            ></iframe>
+
+            <p class="small" style="margin-top:10px;">
+              This embed always shows the newest episodes first (so it effectively stays “latest episode” without manual updates).
+            </p>
+          </section>
+
+          <!-- What The Hack -->
+          <section class="card span4" style="margin-top:0;">
+            <div class="section-title">
+              <h2 style="font-size:16px;margin:0;">What The Hack?</h2>
+              <a href="https://open.spotify.com/show/5892yrlZCRK4B1Ns2v6zFP" target="_blank" rel="noreferrer">Open on Spotify →</a>
+            </div>
+
+            <iframe
+              style="border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(10, 9, 18, .45);"
+              src="https://open.spotify.com/embed/show/5892yrlZCRK4B1Ns2v6zFP?utm_source=generator&theme=0"
+              width="100%"
+              height="232"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="What The Hack? on Spotify"
+            ></iframe>
+          </section>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="card" id="contact">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <span class="small">If you have an article or podcast episode I should check out, send it.</span>
+        </div>
+        <div class="pillrow">
+          <a class="btn" href="mailto:contact@poisonarrow.io">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/cameronpfeil" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/dunkelpfeil" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="y"></span> Poison Arrow • Built on GitHub Pages
+      <div class="small" style="margin-top:6px;">Authorized labs and educational content only.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
