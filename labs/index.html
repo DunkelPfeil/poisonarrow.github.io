@@ -1,11 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Labs | Poison Arrow</title>
-  <meta charset="UTF-8">
+  <meta name="description" content="Hands-on cybersecurity labs, writeups, and practical investigations by Poison Arrow." />
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body style="background-color:#0b0f19;color:white;font-family:Arial;">
-  <h1>Labs</h1>
-  <p>Coming soon...</p>
+
+<body>
+  <div class="wrap">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+
+        <div class="brand-name">
+          POISON ARROW
+          <span class="shot"></span>
+          <span class="shot-trail"></span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/certifications/">Certifications</a>
+        <a href="/labs/">Labs</a>
+        <a href="/articles/">Articles</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span> Hands-on practice • repeatable workflow</div>
+      <h1>Security <span class="grad">Labs</span> & Writeups</h1>
+      <p class="sub">
+        A structured archive of lab work and practical investigations. Writeups are sanitized and educational,
+        focused on methodology, tooling, detection/response lessons, and repeatable takeaways.
+      </p>
+
+      <div class="pillrow" style="margin-top:14px;">
+        <span class="pill">SOC Triage</span>
+        <span class="pill">Network Analysis</span>
+        <span class="pill">Endpoint Telemetry</span>
+        <span class="pill">SIEM</span>
+        <span class="pill">Threat Hunting</span>
+      </div>
+    </section>
+
+    <main class="grid">
+
+      <!-- Featured / Current Focus -->
+      <section class="card span8">
+        <div class="section-title">
+          <h2>Current focus</h2>
+          <span class="small">What I’m working on right now</span>
+        </div>
+
+        <div class="list">
+
+          <div class="item">
+            <div>
+              <strong>TryHackMe Writeups (Sanitized)</strong>
+              <div class="meta">
+                Key takeaways, commands, and defensive lessons. The goal is to document repeatable investigation patterns.
+              </div>
+              <div class="pillrow" style="margin-top:10px;">
+                <span class="pill">THM</span>
+                <span class="pill">Investigation</span>
+                <span class="pill">Writeups</span>
+              </div>
+            </div>
+            <span class="tag">Building</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Elastic Stack: Winlogbeat → Elasticsearch → Kibana</strong>
+              <div class="meta">
+                End-to-end log ingestion by configuring Winlogbeat to ship Windows Event Logs into Elasticsearch
+                with centralized visualization and hunting in Kibana.
+              </div>
+              <div class="pillrow" style="margin-top:10px;">
+                <span class="pill">Elastic</span>
+                <span class="pill">Windows Logs</span>
+                <span class="pill">Pipeline</span>
+              </div>
+            </div>
+            <span class="tag">In progress</span>
+          </div>
+
+        </div>
+
+        <p class="small" style="margin-top:12px;">
+          I keep writeups educational and authorized—no private targets, no credential reuse, no sensitive data.
+        </p>
+      </section>
+
+      <!-- Lab Categories -->
+      <section class="card span4">
+        <div class="section-title">
+          <h2>Categories</h2>
+          <span class="small">How I organize labs</span>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div>
+              <strong>Network</strong>
+              <div class="meta">PCAP analysis, tcpdump/Wireshark workflows, and protocol triage.</div>
+            </div>
+            <span class="tag">Net</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Endpoint</strong>
+              <div class="meta">Windows/Linux telemetry, process trees, persistence, and triage.</div>
+            </div>
+            <span class="tag">EDR</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>SIEM / Detection</strong>
+              <div class="meta">Splunk/Elastic query building, alerts, and investigation timelines.</div>
+            </div>
+            <span class="tag">SIEM</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Threat Hunting</strong>
+              <div class="meta">Hypothesis-driven hunts, IOCs, and confirmation steps.</div>
+            </div>
+            <span class="tag">Hunt</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent / Example Writeups -->
+      <section class="card twoCol">
+        <div class="section-title">
+          <h2>Recent writeups</h2>
+          <span class="small">Examples (add links as you publish)</span>
+        </div>
+
+        <div class="list">
+
+          <div class="item">
+            <div>
+              <strong>Investigating with Splunk — notes</strong>
+              <div class="meta">
+                How I approach alert triage, pivot fields, build timelines, and confirm/deny hypotheses.
+              </div>
+            </div>
+            <span class="tag">Add link</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>PCAP triage workflow</strong>
+              <div class="meta">
+                Quick method: identify flows, extract indicators, confirm protocol behavior, and document findings.
+              </div>
+            </div>
+            <span class="tag">Planned</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Linux auth log investigation</strong>
+              <div class="meta">
+                Brute-force patterns, suspicious sessions, and how to validate with correlated logs.
+              </div>
+            </div>
+            <span class="tag">Planned</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Suggest a Lab -->
+      <section class="card twoCol">
+        <div class="section-title">
+          <h2>Suggest a lab</h2>
+          <span class="small">Ideas welcome</span>
+        </div>
+
+        <p class="sub" style="margin:0 0 14px;">
+          If you have an authorized lab or a learning path you think I should run,
+          send it to me. I’m especially interested in realistic SOC scenarios and detection validation.
+        </p>
+
+        <div class="pillrow">
+          <a class="btn" href="mailto:contact@poisonarrow.io">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/cameronpfeil" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://tryhackme.com/p/poisonarrow" target="_blank" rel="noreferrer">TryHackMe</a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="y"></span> Poison Arrow • Built on GitHub Pages
+      <div class="small" style="margin-top:6px;">Authorized labs and educational content only.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
