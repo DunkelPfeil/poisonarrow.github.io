@@ -1,11 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Poison Arrow</title>
-  <meta charset="UTF-8">
+  <meta name="description" content="Cybersecurity projects, tooling, labs, and research by Poison Arrow." />
+  <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body style="background-color:#0b0f19;color:white;font-family:Arial;">
-  <h1>Projects</h1>
-  <p>Coming soon...</p>
+
+<body>
+  <div class="wrap">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+
+        <div class="brand-name">
+          POISON ARROW
+          <span class="shot"></span>
+          <span class="shot-trail"></span>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+        <a href="/certifications/">Certifications</a>
+        <a href="/labs/">Labs</a>
+        <a href="/articles/">Articles</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span> Practical builds • real implementations</div>
+      <h1>Cybersecurity <span class="grad">Projects</span></h1>
+      <p class="sub">
+        A collection of tools, labs, research experiments, and security-focused development work.
+        Each project documents objectives, methodology, and takeaways.
+      </p>
+    </section>
+
+    <main class="grid">
+
+      <!-- Featured Project -->
+      <section class="card span8">
+        <div class="section-title">
+          <h2>Featured Project</h2>
+          <span class="small">Highlighted work</span>
+        </div>
+
+        <div class="list">
+          <div class="item">
+            <div>
+              <strong>Day Zer0</strong>
+              <div class="meta">
+                Co-founded a cybersecurity-oriented open world video game project.
+                Focused on building immersive environments that introduce real-world
+                security principles through gameplay mechanics.
+              </div>
+
+              <div class="pillrow" style="margin-top:10px;">
+                <span class="pill">Game Dev</span>
+                <span class="pill">Security Concepts</span>
+                <span class="pill">Team Collaboration</span>
+              </div>
+            </div>
+
+            <a class="tag" href="https://github.com/trent10hodge/Day_Zero" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security Tooling -->
+      <section class="card span4">
+        <div class="section-title">
+          <h2>Tooling</h2>
+          <span class="small">Scripts & automation</span>
+        </div>
+
+        <div class="list">
+
+          <div class="item">
+            <div>
+              <strong>Netcat Scan Script</strong>
+              <div class="meta">
+                Custom bash-based port scanner with service detection logic and
+                contextual output for rapid triage.
+              </div>
+            </div>
+            <span class="tag">Script</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Packet Analysis Toolkit</strong>
+              <div class="meta">
+                Collection of Wireshark filters, tcpdump patterns,
+                and structured analysis workflow notes.
+              </div>
+            </div>
+            <span class="tag">In Progress</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Detection Engineering -->
+      <section class="card twoCol">
+        <div class="section-title">
+          <h2>Detection Engineering</h2>
+          <span class="small">SPL • Log analysis • Threat hunting</span>
+        </div>
+
+        <div class="list">
+
+          <div class="item">
+            <div>
+              <strong>Splunk Detection Notes</strong>
+              <div class="meta">
+                SPL queries, field extractions, and alert logic
+                derived from hands-on lab simulations.
+              </div>
+            </div>
+            <span class="tag">Lab-Based</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Elastic Stack Log Pipeline Lab</strong>
+              <div class="meta">
+                Configured Winlogbeat ingestion into Elasticsearch
+                with Kibana dashboards for visibility and detection testing.
+              </div>
+            </div>
+            <span class="tag">In Progress</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Future Builds -->
+      <section class="card">
+        <div class="section-title">
+          <h2>Planned Builds</h2>
+          <span class="small">Upcoming projects</span>
+        </div>
+
+        <div class="list">
+
+          <div class="item">
+            <div>
+              <strong>Automated Log Triage Workflow</strong>
+              <div class="meta">
+                Script-based log classification pipeline for prioritizing alerts
+                during simulated SOC scenarios.
+              </div>
+            </div>
+            <span class="tag">Planned</span>
+          </div>
+
+          <div class="item">
+            <div>
+              <strong>Threat Emulation Sandbox</strong>
+              <div class="meta">
+                Controlled environment to simulate attacker behavior
+                and validate defensive detections.
+              </div>
+            </div>
+            <span class="tag">Research</span>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="y"></span> Poison Arrow • Built on GitHub Pages
+      <div class="small" style="margin-top:6px;">Authorized labs and educational content only.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
