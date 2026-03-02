@@ -15,19 +15,20 @@
     <header class="topbar">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-
         <div class="brand-name">
-          POISON ARROW
+          <span class="grad">POISON ARROW </span>
           <span class="shot"></span>
           <span class="shot-trail"></span>
+          Cameron Pfeil
         </div>
       </div>
 
       <nav class="nav" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/projects/">Projects</a>
+        <a href="/certifications/">Certifications</a>
+        <a href="/labs/">Labs</a>
         <a href="/articles/">Articles</a>
-        <a href="/changelog/">Changelog</a>
         <a href="/#contact">Contact</a>
       </nav>
     </header>
@@ -44,58 +45,71 @@
 
     <main class="grid">
 
-      <!-- Latest -->
-      <section class="card" id="latest">
+      <!-- Latest Updates -->
+      <section class="card span12" id="latest">
         <div class="section-title">
           <h2>Latest updates</h2>
           <span class="small">Newest first</span>
         </div>
 
         <div class="list">
-          <div class="item">
+          <!-- TODAY'S UPDATE -->
+          <div class="btn" style="margin-bottom: 10px; cursor: default;">
+            <div>
+              <strong>2026-03-02 — UI Refinement & Interaction Glow</strong>
+              <div class="meta">
+                Implemented vertical centering for project tags and added a hover-reveal 
+                glow effect across project cards. Integrated a persistent "Under Construction" 
+                ribbon for site-wide development status.
+              </div>
+
+              <div class="pillrow">
+                <span class="pill">UI/UX</span>
+                <span class="pill">CSS</span>
+                <span class="pill">Animation</span>
+              </div>
+            </div>
+            <span class="tag">UI Update</span>
+          </div>
+
+          <!-- PROJECT PAGE COMPLETION -->
+          <div class="btn" style="margin-bottom: 10px; cursor: default;">
+            <div>
+              <strong>2026-03-02 — Subpage Architecture Deployment</strong>
+              <div class="meta">
+                Completed the dedicated Projects page with a shared navigation system. 
+                Standardized card layouts and refined CSS for mobile responsiveness.
+              </div>
+
+              <div class="pillrow">
+                <span class="pill">Infrastructure</span>
+                <span class="pill">Content</span>
+              </div>
+            </div>
+            <span class="tag">Completed</span>
+          </div>
+
+          <!-- PREVIOUS UPDATE -->
+          <div class="btn" style="margin-bottom: 10px; cursor: default;">
             <div>
               <strong>2026-02-27 — External stylesheet + header animation</strong>
               <div class="meta">
-                Moved CSS from <code>index.html</code> into <code>/assets/styles.css</code>. Fixed header markup issues and added animated “arrow shot” hover effect on brand name.
+                Moved CSS from index.html into /assets/styles.css. Fixed header markup issues and added animated “arrow shot” hover effect on brand name.
               </div>
 
-              <div class="pillrow" style="margin-top:10px;">
+              <div class="pillrow">
                 <span class="pill">UI</span>
                 <span class="pill">CSS</span>
                 <span class="pill">Bugfix</span>
               </div>
             </div>
+            <span class="tag">System</span>
           </div>
         </div>
 
         <p class="small" style="margin-top:12px;">
           Tip: keep entries short and consistent—date, change, reason, next.
         </p>
-      </section>
-
-      <!-- Template -->
-      <section class="card twoCol">
-        <div class="section-title">
-          <h2>Entry template</h2>
-          <span class="small">Copy/paste</span>
-        </div>
-
-        <div class="item">
-          <div>
-            <strong>YYYY-MM-DD — Title of change</strong>
-            <div class="meta">
-              What changed (1–2 sentences). Why it matters. Link to page/repo if relevant.
-              <br><br>
-              <em>Next:</em> What you plan to do next.
-            </div>
-
-            <div class="pillrow" style="margin-top:10px;">
-              <span class="pill">UI</span>
-              <span class="pill">Content</span>
-              <span class="pill">Infra</span>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- Roadmap -->
@@ -106,21 +120,45 @@
         </div>
 
         <div class="list">
-          <div class="item">
-            <div>
-              <strong>Build subpages</strong>
-              <div class="meta">Projects, Certifications, Labs, Articles as dedicated pages with shared nav.</div>
-            </div>
-            <span class="tag">Planned</span>
-          </div>
-
-          <div class="item">
+          <div class="btn">
             <div>
               <strong>Add “Now” section</strong>
               <div class="meta">What you’re currently learning, building, or reading.</div>
             </div>
             <span class="tag">Planned</span>
           </div>
+          
+          <div class="btn">
+            <div>
+              <strong>Interactive Lab Demos</strong>
+              <div class="meta">Embed live terminal snapshots or video walkthroughs for network labs.</div>
+            </div>
+            <span class="tag">Research</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Template -->
+      <section class="card twoCol">
+        <div class="section-title">
+          <h2>Entry template</h2>
+          <span class="small">Copy/paste</span>
+        </div>
+
+        <div class="btn" style="cursor: default;">
+          <div>
+            <strong>YYYY-MM-DD — Title</strong>
+            <div class="meta">
+              What changed. Why it matters. Link to page/repo if relevant.
+            </div>
+
+            <div class="pillrow">
+              <span class="pill">UI</span>
+              <span class="pill">Content</span>
+              <span class="pill">Infra</span>
+            </div>
+          </div>
+          <span class="tag">Status</span>
         </div>
       </section>
 
