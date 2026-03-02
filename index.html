@@ -35,7 +35,7 @@
     <!-- Under Construction Ribbon -->
     <div style="position: fixed; top: 0; left: 0; width: 150px; height: 150px; overflow: hidden; z-index: 9999; pointer-events: none;">
       <div style="position: absolute; top: 30px; left: -40px; width: 200px; background: #ffd700; color: #000; text-align: center; font-family: sans-serif; font-size: 12px; font-weight: bold; padding: 8px 0; transform: rotate(-45deg); box-shadow: 0 2px 5px rgba(0,0,0,0.2); border-top: 1px dashed #000; border-bottom: 1px dashed #000; pointer-events: auto;">
-          🚧 UNDER CONSTRUCTION
+          🚧 WEBSITE UNDER CONSTRUCTION...
       </div>
     </div>
     
@@ -44,14 +44,15 @@
       <div class="kicker"><span class="dot"></span> Cybersecurity portfolio • living record</div>
       <h1>Smart Security. <span class="grad">Real Results.</span></h1>
       <p class="sub">
-        A centralized place to track certifications, hands-on labs, scripts/tools, and active security research.
+        A centralized place to track certifications, hands-on labs, scripts/tools, and the security articles and research I’m actively following.
       </p>
 
       <div class="cta">
         <a class="btn primary" href="/projects/">View projects</a>
-        <a class="btn" href="https://github.com/dunkelpfeil" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/cameronpfeil" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="https://tryhackme.com/p/poisonarrow" target="_blank" rel="noreferrer">TryHackMe</a>
+        <a class="btn" href="/articles/">Articles</a>
+        <a class="btn" href="https://github.com" target="_blank">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://tryhackme.com" target="_blank">TryHackMe</a>
       </div>
 
       <div class="pillrow" style="margin-top:18px;">
@@ -75,9 +76,9 @@
           <div class="btn" style="cursor: default;">
             <div>
               <strong>Day Zer0</strong>
-              <div class="meta">Co-founder. Building a cybersecurity oriented open world video game.</div>
+              <div class="meta">Company co-founder. Focused on creating a cybersecurity oriented open world video game.</div>
             </div>
-            <a class="tag" href="https://github.com/trent10hodge/Day_Zero" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="tag" href="https://github.com" target="_blank">GitHub</a>
           </div>
 
           <div class="btn" style="cursor: default;">
@@ -86,6 +87,14 @@
               <div class="meta">SPL patterns, field extractions, and detection logic experiments.</div>
             </div>
             <span class="tag">In progress</span>
+          </div>
+
+          <div class="btn" style="cursor: default;">
+            <div>
+              <strong>Packet analysis toolkit</strong>
+              <div class="meta">Wireshark filters, tcpdump patterns, and quick triage workflow.</div>
+            </div>
+            <span class="tag">Planned</span>
           </div>
         </div>
       </section>
@@ -108,8 +117,24 @@
 
           <div class="btn" style="cursor: default;">
             <div>
+              <strong>SEC1 — TryHackMe</strong>
+              <div class="meta">Log Analysis • Incident Triage • Endpoint Threat Detection.</div>
+            </div>
+            <span class="tag">Earned</span>
+          </div>
+
+          <div class="btn" style="cursor: default;">
+            <div>
               <strong>BTL1 — Security Blue Team</strong>
-              <div class="meta">Training in progress - Expected Completion 5/2026.</div>
+              <div class="meta">52% Training Completion - Expected Completion 5/2026.</div>
+            </div>
+            <span class="tag">In Progress</span>
+          </div>
+
+          <div class="btn" style="cursor: default;">
+            <div>
+              <strong>SAL1 — TryHackMe</strong>
+              <div class="meta">42% Training Completion - Prioritizing BTL1 currently.</div>
             </div>
             <span class="tag">In Progress</span>
           </div>
@@ -126,6 +151,14 @@
         <div class="list">
           <div class="btn" style="cursor: default;">
             <div>
+              <strong>TryHackMe Writeups</strong>
+              <div class="meta">Sanitized notes, key takeaways, and defensive lessons.</div>
+            </div>
+            <span class="tag">Writeups</span>
+          </div>
+
+          <div class="btn" style="cursor: default;">
+            <div>
               <strong>Elastic Stack & WinLogBeat Lab</strong>
               <div class="meta">End-to-end log pipelines for centralized visualization and threat hunting.</div>
             </div>
@@ -134,18 +167,41 @@
         </div>
       </section>
 
+      <!-- Articles -->
+      <section class="card span4" id="articles">
+        <div class="section-title">
+          <h2>Articles</h2>
+          <a href="/articles/">All notes →</a>
+        </div>
+
+        <div class="list">
+          <div class="btn" style="cursor: default;">
+            <div>
+              <strong>Curated reading list</strong>
+              <div class="meta">Short summary + why it matters for SOC triage.</div>
+            </div>
+            <span class="tag">Start here</span>
+          </div>
+
+          <div class="btn" style="cursor: default;">
+            <div>
+              <strong>RSS later (optional)</strong>
+              <div class="meta">Future automation phase with a static generator.</div>
+            </div>
+            <span class="tag">Phase 2</span>
+          </div>
+        </div>
+      </section>
+
       <!-- Contact -->
-      <section class="card span4" id="contact">
+      <section class="card span12" id="contact">
         <div class="section-title">
           <h2>Contact</h2>
+          <span class="small">Connect for inquiries or professional opportunities.</span>
         </div>
-        <div class="list">
-          <a class="btn" href="mailto:your-email@example.com">
-            <strong>Email Me</strong>
-          </a>
-          <a class="btn" href="https://www.linkedin.com/in/cameronpfeil" target="_blank">
-            <strong>LinkedIn</strong>
-          </a>
+        <div class="cta" style="margin-top: 0;">
+          <a class="btn primary" href="mailto:your-email@example.com">Email Me</a>
+          <a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
         </div>
       </section>
 
