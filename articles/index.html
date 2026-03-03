@@ -99,30 +99,54 @@
         </p>
       </section>
 
-      <!-- Quick Tags / Organization -->
-      <section class="card span4">
+      <!-- Security News Feed -->
+      <section class="card span4" id="news-feed">
         <div class="section-title">
-          <h2>Topics</h2>
-          <span class="small">How I label notes</span>
+          <h2>Security News</h2>
+          <span class="small">Live RSS Updates</span>
         </div>
 
-        <div class="pillrow">
-          <span class="pill">Threat Intel</span>
-          <span class="pill">Malware</span>
-          <span class="pill">Phishing</span>
-          <span class="pill">Cloud</span>
-          <span class="pill">Windows</span>
-          <span class="pill">Linux</span>
-          <span class="pill">SIEM</span>
-          <span class="pill">Detection</span>
-          <span class="pill">IR</span>
-          <span class="pill">Forensics</span>
+        <div class="list" style="max-height: 480px; overflow-y: auto; padding-right: 5px;">
+          <!-- The Hacker News -->
+          <div class="btn" style="cursor: default; margin-bottom: 8px;">
+            <div style="width: 100%;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: var(--purple);">The Hacker News</strong>
+                <span class="tag" style="font-size: 10px;">RSS</span>
+              </div>
+              <!-- RSS.app Widget Embed -->
+              <iframe src="https://rss.app" frameborder="0" width="100%" height="130"></iframe>
+            </div>
+          </div>
+
+          <!-- We Live Security (ESET) -->
+          <div class="btn" style="cursor: default; margin-bottom: 8px;">
+            <div style="width: 100%;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: var(--green);">We Live Security</strong>
+                <span class="tag" style="font-size: 10px;">RSS</span>
+              </div>
+              <iframe src="https://rss.app" frameborder="0" width="100%" height="130"></iframe>
+            </div>
+          </div>
+
+          <!-- Dark Reading -->
+          <div class="btn" style="cursor: default;">
+            <div style="width: 100%;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: var(--muted);">Dark Reading</strong>
+                <span class="tag" style="font-size: 10px;">RSS</span>
+              </div>
+              <iframe src="https://rss.app" frameborder="0" width="100%" height="130"></iframe>
+            </div>
+          </div>
         </div>
 
         <p class="small" style="margin-top:12px;">
-          Later we can add filtering/search, but this keeps it fast and simple for now.
+          Feeds for the latest headlines from top threat intel sources.
         </p>
       </section>
+
 
       <!-- Top Podcasts -->
       <section class="card" id="top-podcasts">
