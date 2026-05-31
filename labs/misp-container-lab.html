@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MISP Lab Writeup | Poison Arrow</title>
+    <meta name="description" content="Technical lab writeup for containerized MISP deployment." />
+    <!-- Inherits your global layout, typography, backgrounds, and interactive glow -->
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <div class="wrap">
+        <!-- Top bar (Your Brand & Global Nav) -->
+        <header class="topbar">
+            <div class="brand">
+                <img src="/android-chrome-192x192.png" alt="Poison Arrow logo" class="logo" />
+                <div class="brand-name">
+                    <span class="grad">POISON ARROW </span>
+                    <span class="shot"></span>
+                    <span class="shot-trail"></span>
+                    Cameron Pfeil
+                </div>
+            </div>
+            <nav class="nav" aria-label="Primary">
+                <a href="/">Home</a>
+                <a href="/projects/">Projects</a>
+                <a href="/certifications/">Certifications</a>
+                <a href="/labs/">Labs</a>
+                <a href="/articles/">Articles</a>
+                <a href="/#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Hero Intro Segment -->
+        <section class="hero">
+            <div class="kicker"><span class="dot"></span> Technical Lab Report</div>
+            <h1>Threat Intel Lab: <span class="grad">MISP Containerization</span></h1>
+            <p class="sub">
+                A granular breakdown of implementing, troubleshooting, and tuning an open-source Malware Information Sharing Platform ecosystem using container architecture.
+            </p>
+        </section>
+
+        <!-- Main Content Area Grid Layout -->
+        <main class="grid">
+            <!-- Full-width structural card holding the writeup details -->
+            <article class="card span12" style="padding: 30px; line-height: 1.6; text-align: left;">
+                
+                <h2 style="margin-top:0;">1. Objective & Architecture</h2>
+                <p>
+                    The purpose of this deployment was to stand up an isolated Threat Intelligence platform to capture and manage machine-readable Indicators of Compromise (IoCs). To maintain environment speed and cleanly manage dependencies, the architecture utilizes lightweight microservice isolation.
+                </p>
+                <ul>
+                    <li><strong>Target OS:</strong> Ubuntu Core Virtual Machine</li>
+                    <li><strong>Orchestration:</strong> Docker Engine V2 & Compose Framework</li>
+                    <li><strong>Containers Orchestrated:</strong> <code>misp-core</code>, <code>misp-modules</code>, Redis, MariaDB</li>
+                </ul>
+
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;" />
+
+                <h2>2. Implementation & Configurations</h2>
+                <p>
+                    The instance was pulled directly from production distribution lines. Structural configurations were localized within an environment parameters file:
+                </p>
+                <pre style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 6px; overflow-x: auto; color: #a9b7c6; font-family: monospace; border: 1px solid rgba(255,255,255,0.05); margin: 15px 0;">
+git clone https://github.com
+cd misp-docker
+cp template.env .env</pre>
+
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;" />
+
+                <h2>3. Debugging Operations (Real-World Metrics)</h2>
+                <p>
+                    During runtime initialization, the environment encountered two distinct systemic errors that required configuration adjustments:
+                </p>
+
+                <h3 style="color: #ffd700; font-size: 1.2rem; margin-top:20px;">A. Memory Exhaustion on Expansion Modules</h3>
+                <p>
+                    <strong>Symptom:</strong> System failure stated <code>container misp-docker-misp-modules-1 is unhealthy</code>.
+                </p>
+                <p>
+                    <strong>Root Cause:</strong> System resources checks (<code>free -h</code>) indicated that the underlying host VM was throttled with under ~130 MiB of system memory available. The compilation of heavy threat signature modules stalled, forcing container failures.
+                </p>
+                <p>
+                    <strong>Remediation:</strong> Scaled hardware capabilities to <strong>4 GB of System RAM</strong>. Run-state container caches were thoroughly cleared using <code>docker system prune -f</code> to guarantee clean file instantiation during the subsequent launch cycle.
+                </p>
+
+                <h3 style="color: #ffd700; font-size: 1.2rem; margin-top:20px;">B. Infinite Domain Redirection Loops</h3>
+                <p>
+                    <strong>Symptom:</strong> Browser interface generated standard <code>ERR_TOO_MANY_REDIRECTS</code> connection timeouts.
+                </p>
+                <p>
+                    <strong>Root Cause:</strong> Web proxies expected secure HTTPS routes, while internal framework routes remained unassigned within blank template properties.
+                </p>
+                <p>
+                    <strong>Remediation:</strong> Injected explicitly synchronized parameters inside the environmental settings file and executed localized schema alignments directly into the active application framework container:
+                </p>
+                <pre style="background: rgba(0,0,0,0.4); padding: 16px; border-radius: 6px; overflow-x: auto; color: #a9b7c6; font-family: monospace; border: 1px solid rgba(255,255,255,0.05); margin: 15px 0;">
+# Updated environment parameters configuration
+BASE_URL=https://localhost
+
+# Overriding domain routing schemas through the internal CakePHP console
+docker exec -it misp-docker-misp-core-1 /var/www/MISP/app/Console/cake Baseurl https://localhost</pre>
+
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;" />
+
+                <h2>4. Verification & Active Operations</h2>
+                <p>
+                    The platform successfully passed health compliance telemetry across all target nodes. Core administrative accounts were rotated out immediately. Current actions involve initializing automated open-source cyber threat streams (OSINT) to prepare for network SIEM data ingest mappings.
+                </p>
+
+                <div class="pillrow" style="margin-top: 25px;">
+                    <span class="pill">Threat Intel</span>
+                    <span class="pill">Docker Compose</span>
+                    <span class="pill">Linux Systems</span>
+                    <span class="pill">Troubleshooting</span>
+                </div>
+            </article>
+        </main>
+
+        <!-- Unified Footer -->
+        <footer>
+            © <span id="y"></span> Poison Arrow • Built on GitHub Pages
+            <div class="small" style="margin-top:6px;">Authorized labs and educational content only.</div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
