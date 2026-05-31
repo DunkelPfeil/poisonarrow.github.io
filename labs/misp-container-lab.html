@@ -85,7 +85,7 @@ cp template.env .env</pre>
                     <strong>Root Cause:</strong> System resources checks (<code>free -h</code>) indicated that the underlying host VM was throttled with under ~130 MiB of system memory available. The compilation of heavy threat signature modules stalled, forcing container failures.
                 </p>
                 <p>
-                    <strong>Remediation:</strong> Scaled hardware capabilities to <strong>4 GB of System RAM</strong>. Run-state container caches were thoroughly cleared using <code>docker system prune -f</code> to guarantee clean file instantiation during the subsequent launch cycle.
+                    <strong>Remediation:</strong> Scaled hardware capabilities to <strong>8 GB of System RAM</strong>. Run-state container caches were thoroughly cleared using <code>docker system prune -f</code> to guarantee clean file instantiation during the subsequent launch cycle.
                 </p>
 
                 <h3 style="color: #ffd700; font-size: 1.2rem; margin-top:20px;">B. Infinite Domain Redirection Loops</h3>
